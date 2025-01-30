@@ -1,8 +1,8 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
   "type": "module",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "build": "echo \"No build needed for backend\"",
     "install": "npm install",
