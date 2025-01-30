@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "build": "echo \"No build needed for backend\"",
-    "install": "npm install",
     "start": "node --watch --experimental-sqlite --env-file=.env server.js"
   },
   "keywords": [],
