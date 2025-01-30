@@ -9,10 +9,6 @@
                 "buildCommand": "npm run build",
                 "startCommand": "npm run start"
               }
-        },
-        {
-            "src": "src/**/*",
-            "use": "@vercel/static"
         }
     ],
     "routes": [
