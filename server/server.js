@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 // app.use(express.static(path.resolve(__dirname, '../client/dist')));
 
 // use routers
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/users', userRouter); 
 app.use('/products', productRouter);
 app.use('/supportBot', supportBotRouter)
@@ -46,6 +46,9 @@ app.use((err, req, res, next) => {
     res.status(500).json({ message: "Internal server error", error: err.message });
 });
 
+app.get('/', (req, res) => {
+    res.status(200).send({ "message": "Hello world" })
+})
 
 app.listen(5000, () => {
     console.log(`Server is running on port ${PORT}`);
