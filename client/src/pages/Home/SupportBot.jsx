@@ -7,9 +7,11 @@ import { useOutletContext } from "react-router-dom"
 export default function SupportBot(){
     const { isMobile } = useOutletContext()
 
-     const URLS = {
-        SUPPORT_BOT: "https://poppedpinnacle-1.onrender.com/supportBot",
-      };
+    const isLocal = window.location.hostname === 'localhost';
+    const URLS = {
+        SUPPORT_BOT: isLocal ? "http://localhost:5000/supportBot" : `${process.env.REACT_APP_API_URL}/supportBot`,
+    };
+    
 
       const [ 
         data, 
@@ -62,11 +64,7 @@ export default function SupportBot(){
     }, [data]);
     
 
-<<<<<<< HEAD
     return !isMobile ? (
-=======
-    return (
->>>>>>> c9ee7e8039c227648fabf82b22d5db1fd332c32f
         <> 
             {isOpen ? ( 
                 <dialog 

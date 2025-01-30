@@ -2,10 +2,13 @@ import { useState, useEffect, useRef, useReducer } from 'react';
 import useFetchData from "../../hooks/useFetchData"
 import Form from '../../components/ui/Form/Form';
 
+
 const LoginForm = () => {
+    const isLocal = window.location.hostname === 'localhost';
     const URLS = {
-        LOGIN: "https://poppedpinnacle-1.onrender.com/login",
-      };
+        LOGIN: isLocal ? "http://localhost:5000/login" : `${process.env.REACT_APP_API_URL}/login`,
+    };
+    
 
       const [ 
         data, 

@@ -6,9 +6,11 @@ import SortFilter from "../SortFilter/SortFilter";
 import { useOutletContext } from "react-router-dom";
 
 export default function ProductGrid() {
-  const URLS = {
-    PRODUCTS: "https://poppedpinnacle-1.onrender.com/products",
-  };
+  const isLocal = window.location.hostname === 'localhost';
+    const URLS = {
+        PRODUCTS: isLocal ? "http://localhost:5000/products" : `${process.env.REACT_APP_API_URL}/products`,
+    };
+    
 
   const [data, isLoading, isError, error] = useFetchData({ url: URLS.PRODUCTS });
   const [hoveredProduct, setHoveredProduct] = useState(null);
